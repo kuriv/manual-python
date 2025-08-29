@@ -1,1 +1,3 @@
-# manual-python
+# Python
+
+Python 是一种易于扩展、功能强大的编程语言。
