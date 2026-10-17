@@ -81,7 +81,7 @@
         * [logging](docs/内置模块/logging.md)
         * [random](docs/内置模块/random.md)
     * [网络爬虫](docs/网络爬虫.md)
-    * [Numpy]
+    * [Numpy](docs/Numpy.md)
     * [Pandas]
     * [Matplotlib]
 
