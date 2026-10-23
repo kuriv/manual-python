@@ -5,29 +5,29 @@
 ```python
 num = 233
 if num > 0:
-    print('Yes')
+    print(True)
 else:
-    print('No')
+    print(False)
 ```
 
-条件判断语句可以进行嵌套。
+条件判断语句可以嵌套。
 
 ```python
 num = 233
 if num > 0:
-    print('Yes')
+    print(True)
     if num > 100:
-        print(666)
+        print('Hello Python!')
     else:
-        print(num)
+        print('Hello World!')
 else:
-    print('No')
+    print(False)
 ```
 
 也可以使用更加简洁的三元表达式。
 
 ```python
 num = 233
-print('Yes') if num > 0 else print('No')
+print(True) if num > 0 else print(False)
 ```
 

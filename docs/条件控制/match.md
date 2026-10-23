@@ -6,12 +6,12 @@
 num = 233
 match num:
     case 0:
-        print(0)
+        print('foo')
     case 233:
-        print(233)
+        print('bar')
     case 666:
-        print(666)
+        print('baz')
     case _:
-        print('Other')
+        print('qux')
 ```
 

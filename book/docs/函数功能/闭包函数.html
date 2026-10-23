@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>闭包 · Python</title>
+        <title>闭包函数 · Python</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -760,12 +760,12 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.1.7.13" data-path="闭包.html">
+        <li class="chapter active" data-level="1.1.7.13" data-path="闭包函数.html">
             
-                <a href="闭包.html">
+                <a href="闭包函数.html">
             
                     
-                    闭包
+                    闭包函数
             
                 </a>
             
@@ -779,19 +779,6 @@
             
                     
                     装饰器
-            
-                </a>
-            
-
-            
-        </li>
-    
-        <li class="chapter " data-level="1.1.7.15" data-path="解包.html">
-            
-                <a href="解包.html">
-            
-                    
-                    解包
             
                 </a>
             
@@ -1250,14 +1237,14 @@
             
         </li>
     
-        <li class="chapter " data-level="1.1.17" >
+        <li class="chapter " data-level="1.1.17" data-path="../Pandas.html">
             
-                <span>
+                <a href="../Pandas.html">
             
                     
-                    [Pandas]
+                    Pandas
             
-                </span>
+                </a>
             
 
             
@@ -1311,7 +1298,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="../.." >闭包</a>
+        <a href="../.." >闭包函数</a>
     </h1>
 </div>
 
@@ -1326,7 +1313,7 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="&#x95ED;&#x5305;">&#x95ED;&#x5305;</h1>
+                                <h1 id="&#x95ED;&#x5305;&#x51FD;&#x6570;">&#x95ED;&#x5305;&#x51FD;&#x6570;</h1>
 <p>&#x5728;&#x5D4C;&#x5957;&#x51FD;&#x6570;&#x4E2D;&#xFF0C;&#x5185;&#x90E8;&#x51FD;&#x6570;&#x4F7F;&#x7528;&#x4E86;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x7684;&#x53D8;&#x91CF;&#xFF0C;&#x800C;&#x5916;&#x90E8;&#x51FD;&#x6570;&#x53C8;&#x8FD4;&#x56DE;&#x4E86;&#x5185;&#x90E8;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x6837;&#x7684;&#x51FD;&#x6570;&#x79F0;&#x4E3A;&#x95ED;&#x5305;&#x3002;</p>
 <pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">outer</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     num <span class="token operator">=</span> <span class="token number">233</span>
@@ -1336,21 +1323,18 @@
 
     <span class="token keyword">return</span> inner
 
-
 <span class="token keyword">print</span><span class="token punctuation">(</span>outer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 outer<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-ot <span class="token operator">=</span> outer<span class="token punctuation">(</span><span class="token punctuation">)</span>
-ot<span class="token punctuation">(</span><span class="token punctuation">)</span>
+func <span class="token operator">=</span> outer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+func<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
 <p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4EE5;&#x95ED;&#x5305;&#x51FD;&#x6570;&#x65B9;&#x5F0F;&#x4F20;&#x9012;&#x53C2;&#x6570;&#x3002;</p>
 <pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">outer</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span>num1<span class="token punctuation">)</span>
 
     <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span>num2<span class="token punctuation">)</span><span class="token punctuation">:</span>
         <span class="token keyword">print</span><span class="token punctuation">(</span>num1 <span class="token operator">+</span> num2<span class="token punctuation">)</span>
 
     <span class="token keyword">return</span> inner
-
 
 outer<span class="token punctuation">(</span><span class="token number">233</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token number">666</span><span class="token punctuation">)</span>
 </code></pre>
@@ -1397,7 +1381,7 @@ outer<span class="token punctuation">(</span><span class="token number">233</spa
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"闭包","level":"1.1.7.13","depth":3,"next":{"title":"装饰器","level":"1.1.7.14","depth":3,"path":"docs/函数功能/装饰器.md","ref":"docs/函数功能/装饰器.md","articles":[]},"previous":{"title":"内置函数","level":"1.1.7.12","depth":3,"path":"docs/函数功能/内置函数.md","ref":"docs/函数功能/内置函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","favicon","hide-element","lightbox","-highlight","prism","-lunr","-search","search-pro","splitter","livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico","appleTouch":"favicon.png","appleTouchMore":{"120x120":"favicon-120x120.png","180x180":"favicon-180x180.png"}},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Python","language":"zh-hans","gitbook":">=3.0.0","description":"Python 手册","direction":"ltr"},"file":{"path":"docs/函数功能/闭包.md","mtime":"2025-09-04T11:21:41.531Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-17T17:11:10.542Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"闭包函数","level":"1.1.7.13","depth":3,"next":{"title":"装饰器","level":"1.1.7.14","depth":3,"path":"docs/函数功能/装饰器.md","ref":"docs/函数功能/装饰器.md","articles":[]},"previous":{"title":"内置函数","level":"1.1.7.12","depth":3,"path":"docs/函数功能/内置函数.md","ref":"docs/函数功能/内置函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","favicon","hide-element","lightbox","-highlight","prism","-lunr","-search","search-pro","splitter","livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico","appleTouch":"favicon.png","appleTouchMore":{"120x120":"favicon-120x120.png","180x180":"favicon-180x180.png"}},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Python","language":"zh-hans","gitbook":">=3.0.0","description":"Python 手册","direction":"ltr"},"file":{"path":"docs/函数功能/闭包函数.md","mtime":"2026-10-23T13:24:37.754Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-23T13:24:44.695Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>

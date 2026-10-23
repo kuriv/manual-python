@@ -16,3 +16,22 @@ else:
     print('End')
 ```
 
+条件循环也可以嵌套。
+
+```python
+matrix = []
+for i in range(3):
+    row = []
+    for j in range(3):
+        row.append(0)
+    matrix.append(row)
+print(matrix)
+```
+
+还可以使用推导式来生成多维矩阵。
+
+```python
+matrix = [[0 for j in range(3)] for i in range(3)]
+print(matrix)
+```
+
