@@ -1315,46 +1315,45 @@
                                 
                                 <h1 id="&#x88C5;&#x9970;&#x5668;">&#x88C5;&#x9970;&#x5668;</h1>
 <p>&#x88C5;&#x9970;&#x5668;&#x662F; Python &#x4E2D;&#x7684;&#x9AD8;&#x7EA7;&#x529F;&#x80FD;&#xFF0C;&#x4E3B;&#x8981;&#x7528;&#x6765;&#x5B9E;&#x73B0;&#x52A8;&#x6001;&#x4FEE;&#x6539;&#x51FD;&#x6570;&#x6216;&#x7C7B;&#x7684;&#x884C;&#x4E3A;&#x3002;</p>
-<pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">outer</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;outer&apos;</span><span class="token punctuation">)</span>
+<pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">deco</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">def</span> <span class="token function">inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;inner before&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">def</span> <span class="token function">wrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;bar&apos;</span><span class="token punctuation">)</span>
         fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;inner after&apos;</span><span class="token punctuation">)</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;baz&apos;</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">return</span> inner
+    <span class="token keyword">return</span> wrap
 
-
-<span class="token decorator annotation punctuation">@outer</span>
+<span class="token decorator annotation punctuation">@deco</span>
 <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span>
 
-
 func<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
-<p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x5806;&#x53E0;&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x65B9;&#x5F0F;&#x5C06;&#x6309;&#x7167;&#x4ECE;&#x4E0B;&#x5230;&#x4E0A;&#x7684;&#x987A;&#x5E8F;&#x4F9D;&#x6B21;&#x5E94;&#x7528;&#x3002;</p>
+<p>&#x6267;&#x884C;&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x5B9E;&#x73B0;&#x591A;&#x4E2A;&#x88C5;&#x9970;&#x5668;&#x5806;&#x53E0;&#xFF0C;&#x6CE8;&#x610F;&#x6B64;&#x65B9;&#x5F0F;&#x5C06;&#x6309;&#x7167;&#x4ECE;&#x4E0B;&#x5230;&#x4E0A;&#x5305;&#x88C5;&#x3001;&#x4ECE;&#x4E0A;&#x5230;&#x4E0B;&#x6267;&#x884C;&#x3002;</p>
 <pre class="language-"><code class="lang-python"><span class="token keyword">def</span> <span class="token function">deco1</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;decorator 1&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">wrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;bar&apos;</span><span class="token punctuation">)</span>
         fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">return</span> wrapper
-
+    <span class="token keyword">return</span> wrap
 
 <span class="token keyword">def</span> <span class="token function">deco2</span><span class="token punctuation">(</span>fn<span class="token punctuation">)</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">wrapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;decorator 2&apos;</span><span class="token punctuation">)</span>
+    <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;baz&apos;</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">def</span> <span class="token function">wrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;qux&apos;</span><span class="token punctuation">)</span>
         fn<span class="token punctuation">(</span><span class="token punctuation">)</span>
 
-    <span class="token keyword">return</span> wrapper
-
+    <span class="token keyword">return</span> wrap
 
 <span class="token decorator annotation punctuation">@deco1</span>
 <span class="token decorator annotation punctuation">@deco2</span>
 <span class="token keyword">def</span> <span class="token function">func</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
     <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">&apos;Hello World!&apos;</span><span class="token punctuation">)</span>
-
 
 func<span class="token punctuation">(</span><span class="token punctuation">)</span>
 </code></pre>
@@ -1401,7 +1400,7 @@ func<span class="token punctuation">(</span><span class="token punctuation">)</s
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"装饰器","level":"1.1.7.14","depth":3,"next":{"title":"异常处理","level":"1.1.8","depth":2,"path":"docs/异常处理.md","ref":"docs/异常处理.md","articles":[{"title":"触发异常","level":"1.1.8.1","depth":3,"path":"docs/异常处理/触发异常.md","ref":"docs/异常处理/触发异常.md","articles":[]},{"title":"捕获异常","level":"1.1.8.2","depth":3,"path":"docs/异常处理/捕获异常.md","ref":"docs/异常处理/捕获异常.md","articles":[]}]},"previous":{"title":"闭包函数","level":"1.1.7.13","depth":3,"path":"docs/函数功能/闭包函数.md","ref":"docs/函数功能/闭包函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","favicon","hide-element","lightbox","-highlight","prism","-lunr","-search","search-pro","splitter","livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico","appleTouch":"favicon.png","appleTouchMore":{"120x120":"favicon-120x120.png","180x180":"favicon-180x180.png"}},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Python","language":"zh-hans","gitbook":">=3.0.0","description":"Python 手册","direction":"ltr"},"file":{"path":"docs/函数功能/装饰器.md","mtime":"2025-09-04T11:37:22.821Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-23T13:24:44.695Z"},"basePath":"../..","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"装饰器","level":"1.1.7.14","depth":3,"next":{"title":"异常处理","level":"1.1.8","depth":2,"path":"docs/异常处理.md","ref":"docs/异常处理.md","articles":[{"title":"触发异常","level":"1.1.8.1","depth":3,"path":"docs/异常处理/触发异常.md","ref":"docs/异常处理/触发异常.md","articles":[]},{"title":"捕获异常","level":"1.1.8.2","depth":3,"path":"docs/异常处理/捕获异常.md","ref":"docs/异常处理/捕获异常.md","articles":[]}]},"previous":{"title":"闭包函数","level":"1.1.7.13","depth":3,"path":"docs/函数功能/闭包函数.md","ref":"docs/函数功能/闭包函数.md","articles":[]},"dir":"ltr"},"config":{"plugins":["back-to-top-button","chapter-fold","favicon","hide-element","lightbox","-highlight","prism","-lunr","-search","search-pro","splitter","livereload"],"root":"","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"chapter-fold":{},"prism":{"css":["prismjs/themes/prism-okaidia.css"]},"livereload":{},"splitter":{},"search-pro":{},"hide-element":{"elements":[".gitbook-link"]},"fontsettings":{"theme":"white","family":"sans","size":2},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico","appleTouch":"favicon.png","appleTouchMore":{"120x120":"favicon-120x120.png","180x180":"favicon-180x180.png"}},"lightbox":{"jquery":true,"sameUuid":false},"back-to-top-button":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"Kuriv Vesti","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"Python","language":"zh-hans","gitbook":">=3.0.0","description":"Python 手册","direction":"ltr"},"file":{"path":"docs/函数功能/装饰器.md","mtime":"2026-10-23T14:10:05.536Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2026-10-23T14:10:13.452Z"},"basePath":"../..","book":{"language":""}});
         });
     </script>
 </div>
